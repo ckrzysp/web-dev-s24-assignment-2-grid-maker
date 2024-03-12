@@ -5,12 +5,39 @@ let colorSelected;
 
 // Add a row
 function addR() {
-    alert("Clicked Add Row"); // Replace this line with your code.
+    numRows = numRows + 1;
+    if (numCols == 0){
+        numCols = numCols + 1;
+    }
+    let grid = document.getElementById("grid");
+
+    // tr is row, td is col
+    let new_row = document.createElement("tr");
+
+    // each new row should have numCols columns
+    for (let i = 0; i < numCols; i++){
+        let new_col = document.createElement("td");
+        new_row.appendChild(new_col);
+    }
+
+    grid.appendChild(new_row);
 }
 
 // Add a column
 function addC() {
-    alert("Clicked Add Col"); // Replace this line with your code.
+    numCols = numCols + 1;
+
+    if (numRows == 0){
+        addR(); // making row 1 means making col 1 and vice versa
+    } else {
+        let rows = document.getElementsByTagName("tr");
+
+        // new column means each each existing row should get an additional column box
+        for (let i = 0; i < numRows; i++){
+            let new_col = document.createElement("td");
+            rows[i].appendChild(new_col);
+        }
+    }
 }
 
 // Remove a row
