@@ -17,6 +17,7 @@ function addR() {
     // each new row should have numCols columns
     for (let i = 0; i < numCols; i++){
         let new_col = document.createElement("td");
+        new_col.style.backgroundColor = "white";
         new_row.appendChild(new_col);
     }
 
@@ -35,6 +36,7 @@ function addC() {
         // new column means each each existing row should get an additional column box
         for (let i = 0; i < numRows; i++){
             let new_col = document.createElement("td");
+            new_col.style.backgroundColor = "white";
             rows[i].appendChild(new_col);
         }
     }
@@ -58,7 +60,16 @@ function selectColor(){
 
 // Fill all uncolored cells
 function fillU(){
-    alert("Clicked Fill All Uncolored"); // Replace this line with your code.
+    let rows = document.getElementsByTagName("tr");
+
+    //for each row, update the each cell if it is a blank/white cell
+    for (let i = 0; i < numRows; i++) {
+        for (let j = 0; j < numCols; j++) {
+            if (rows[i].children[j].style.backgroundColor == "white") {
+                rows[i].children[j].style.backgroundColor = colorSelected;
+            }
+        }
+    }
 }
 
 // Fill all cells
