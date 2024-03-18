@@ -19,6 +19,9 @@ function addR() {
         let new_col = document.createElement("td");
         new_col.style.backgroundColor = "white";
         new_row.appendChild(new_col);
+        new_col.onclick = () => { 
+            new_col.style.backgroundColor = colorSelected; 
+        };
     }
 
     grid.appendChild(new_row);
@@ -38,6 +41,9 @@ function addC() {
             let new_col = document.createElement("td");
             new_col.style.backgroundColor = "white";
             rows[i].appendChild(new_col);
+            new_col.onclick = () => { 
+                new_col.style.backgroundColor = colorSelected; 
+            };
         }
     }
 }
@@ -56,6 +62,10 @@ function removeC() {
 function selectColor(){
     colorSelected = document.getElementById("selectedColorId").value;
     console.log(colorSelected);
+}
+
+function changeSingleCell(element) {
+    style.backgroundColor = colorSelected;
 }
 
 // Fill all uncolored cells
