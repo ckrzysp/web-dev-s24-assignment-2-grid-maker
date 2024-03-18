@@ -76,7 +76,7 @@ function fillU(){
 function fillAll(){
     let rows = document.getElementsByTagName("tr");
 
-    //for each col, update the each cell without checking for white/colored cell
+    //for each row, update each cell without checking for white/colored cell
     for (let i = 0; i < numRows; i++) {
         for (let j = 0; j < numCols; j++) {
             rows[i].children[j].style.backgroundColor = colorSelected;
@@ -86,5 +86,12 @@ function fillAll(){
 
 // Clear all cells
 function clearAll(){
-    alert("Clicked Clear All"); // Replace this line with your code.
+    let rows = document.getElementsByTagName("tr");
+
+    //for each row, remove each cell from the grid
+    for (let i = 0; i < numRows; i++) {
+        for (let j = 0; j < numCols; j++) {
+            rows[i].remove();
+        }
+    }
 }
