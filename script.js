@@ -84,14 +84,8 @@ function fillAll(){
     }
 }
 
-// Clear all cells
+// Clear all cells by removing the entire grid
 function clearAll(){
-    let rows = document.getElementsByTagName("tr");
-
-    //for each row, remove each cell from the grid
-    for (let i = 0; i < numRows; i++) {
-        for (let j = 0; j < numCols; j++) {
-            rows[i].remove();
-        }
-    }
+    let grid = document.getElementById("grid");
+    grid.remove();
 }
