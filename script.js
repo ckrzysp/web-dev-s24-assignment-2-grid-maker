@@ -74,7 +74,14 @@ function fillU(){
 
 // Fill all cells
 function fillAll(){
-    alert("Clicked Fill All"); // Replace this line with your code.
+    let rows = document.getElementsByTagName("tr");
+
+    //for each col, update the each cell without checking for white/colored cell
+    for (let i = 0; i < numRows; i++) {
+        for (let j = 0; j < numCols; j++) {
+            rows[i].children[j].style.backgroundColor = colorSelected;
+        }
+    }
 }
 
 // Clear all cells
