@@ -84,8 +84,13 @@ function fillAll(){
     }
 }
 
-// Clear all cells by removing the entire grid
+// Clear all cells by setting all cells to white
 function clearAll(){
-    let grid = document.getElementById("grid");
-    grid.remove();
+    let rows = document.getElementsByTagName("tr");
+
+    for (let i = 0; i < numRows; i++) {
+        for (let j = 0; j < numCols; j++) {
+            rows[i].children[j].style.backgroundColor = "white";
+        }
+    }
 }
