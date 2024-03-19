@@ -4,6 +4,10 @@ This repository is the starter code for Assignment 3 - Grid Maker.
 ### Live Link
 [Website link](https://ckrzysp.github.io/web-dev-s24-assignment-2-grid-maker/)
 
+Group Members:
+
+Christopher Pawlus, Emily Klapper, Lina Tran, Natalie Gallo
+
 ----------
 ### 1. Use the following process to ***import*** the Assignment 3 starter code repository to your GitHub account as the starter codebase
 1.	Log on to GitHub
