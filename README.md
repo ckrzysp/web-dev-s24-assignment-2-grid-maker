@@ -6,7 +6,7 @@ This repository is the starter code for Assignment 3 - Grid Maker.
 
 Group Members:
 
-Christopher Pawlus, Emily Klapper, Lina Tran, Natalie Gallo
+Christopher Pawlus (ckrzysp), Emily Klapper (emiklap), Lina Tran (ltran7233), Natalie Gallo (natalie-gallo)
 
 ----------
 ### 1. Use the following process to ***import*** the Assignment 3 starter code repository to your GitHub account as the starter codebase
