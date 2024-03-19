@@ -19,9 +19,6 @@ function addR() {
         let new_col = document.createElement("td");
         new_col.style.backgroundColor = "white";
         new_row.appendChild(new_col);
-        new_col.onclick = () => { 
-            new_col.style.backgroundColor = colorSelected; 
-        };
     }
 
     grid.appendChild(new_row);
@@ -41,31 +38,90 @@ function addC() {
             let new_col = document.createElement("td");
             new_col.style.backgroundColor = "white";
             rows[i].appendChild(new_col);
-            new_col.onclick = () => { 
-                new_col.style.backgroundColor = colorSelected; 
-            };
         }
     }
 }
 
 // Remove a row
 function removeR() {
-    alert("Clicked Remove Row"); // Replace this line with your code.
+    if(numRows <= 0) 
+    {
+        // Error Handling, no rows/cols left
+    }
+    if(numRows <= 1) 
+    {
+        // If last row has more than 1 block, cols must be 0 to avoid count failure
+        numCols = 0;
+        let cols = document.getElementsByTagName("tr");
+
+        for(let i = 0; i < numCols; i++) 
+        {
+            cols[numRows-1].removeChild(cols[numRows-1].lastChild);
+        }
+        
+        cols[numRows-1].remove();
+
+        numRows = numRows - 1;
+    }
+    else 
+    {
+        // General case
+        let cols = document.getElementsByTagName("tr");
+
+        for(let i = 0; i < numCols; i++) 
+        {
+            cols[numRows-1].removeChild(cols[numRows-1].lastChild);
+        }
+        
+        cols[numRows-1].remove();
+
+        numRows = numRows - 1;
+    }
 }
 
 // Remove a column
 function removeC() {
-    alert("Clicked Remove Col"); // Replace this line with your code.
+    if(numCols <= 0) 
+    {
+        // Error Handling, no rows/cols left
+    }
+    if(numCols <= 1) 
+    {
+        // If last col has more than 1 block, rows must be 0 to avoid count failure
+        let rows = document.getElementsByTagName("tr");
+        
+        for(let i = 0; i < numRows; i++) 
+        {
+            rows[i].removeChild(rows[i].lastChild);
+        }
+
+        numCols = numCols - 1;
+        
+        for(let i = numRows-1; i >= 0; i--) 
+        {
+            rows[i].remove();
+        }
+
+        numRows = 0;
+    }
+    else 
+    {
+        // General Case
+        let rows = document.getElementsByTagName("tr");
+        
+        for(let i = 0; i < numRows; i++) 
+        {
+            rows[i].removeChild(rows[i].lastChild);
+        }
+
+        numCols = numCols - 1;
+    }
 }
 
 // Set global variable for selected color
 function selectColor(){
     colorSelected = document.getElementById("selectedColorId").value;
     console.log(colorSelected);
-}
-
-function changeSingleCell(element) {
-    style.backgroundColor = colorSelected;
 }
 
 // Fill all uncolored cells
@@ -94,7 +150,7 @@ function fillAll(){
     }
 }
 
-// Clear all cells by setting all cells to white
+// Clear all cells
 function clearAll(){
     let rows = document.getElementsByTagName("tr");
 
