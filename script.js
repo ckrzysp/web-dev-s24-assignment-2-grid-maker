@@ -53,6 +53,7 @@ function removeR() {
     if(numRows <= 0) 
     {
         // Error Handling, no rows/cols left
+        numRows = 0;
     }
     if(numRows <= 1) 
     {
@@ -90,6 +91,7 @@ function removeC() {
     if(numCols <= 0) 
     {
         // Error Handling, no rows/cols left
+        numCols = 0;
     }
     if(numCols <= 1) 
     {
