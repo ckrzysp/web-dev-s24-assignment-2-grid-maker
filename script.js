@@ -46,7 +46,7 @@ function addC() {
 function removeR() {
     if(numRows <= 0) 
     {
-        
+        // Error Handling, no rows/cols left
     }
     if(numRows <= 1) 
     {
@@ -83,7 +83,7 @@ function removeR() {
 function removeC() {
     if(numCols <= 0) 
     {
-        
+        // Error Handling, no rows/cols left
     }
     if(numCols <= 1) 
     {
